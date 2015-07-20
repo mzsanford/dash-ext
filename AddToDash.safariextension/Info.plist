@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>Author</key>
+    <string>Matt Sanford</string>
+    <key>Builder Version</key>
+    <string>10601.1.37.1.2</string>
+    <key>CFBundleDisplayName</key>
+    <string>Add to Dash</string>
+    <key>CFBundleIdentifier</key>
+    <string>com.mzsanford.addtodash</string>
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+    <key>CFBundleShortVersionString</key>
+    <string>0.1</string>
+    <key>CFBundleVersion</key>
+    <string>1</string>
+    <key>Content</key>
+    <dict>
+      <key>Scripts</key>
+      <dict>
+        <key>End</key>
+        <array>
+          <string/>
+        </array>
+      </dict>
+      <key>Stylesheets</key>
+      <array>
+        <string/>
+      </array>
+    </dict>
+    <key>Description</key>
+    <string>Add document sets to Dash.app</string>
+    <key>ExtensionInfoDictionaryVersion</key>
+    <string>1.0</string>
+    <key>Permissions</key>
+    <dict>
+      <key>Website Access</key>
+      <dict>
+        <key>Allowed Domains</key>
+        <array>
+          <string>godoc.org</string>
+          <string>*.godoc.org</string>
+          <string>rubygems.org</string>
+          <string>*.rubygems.org</string>
+          <string>cocoapods.org</string>
+          <string>*.cocoapods.org</string>
+        </array>
+        <key>Include Secure Pages</key>
+        <true/>
+        <key>Level</key>
+        <string>Some</string>
+      </dict>
+    </dict>
+  </dict>
+</plist>
