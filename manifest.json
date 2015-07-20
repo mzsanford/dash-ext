@@ -1,10 +1,22 @@
 {
   "name": "Add to Dash",
+  "manifest_version": 2,
+  "version": "0.1",
   "content_scripts": [
     {
-      "matches": "*://*godoc.org/*",
+      "matches": ["*://godoc.org/*", "*://*.godoc.org/*"],
       "css": ["css/style.css"],
       "js": ["js/jquery-1.10.2.min.js", "js/base.js", "js/godoc.js"]
+    },
+    {
+      "matches": ["*://rubygems.org/*", "*://*.rubygems.org/*"],
+      "css": ["css/style.css"],
+      "js": ["js/jquery-1.10.2.min.js", "js/base.js", "js/rubygems.js"]
+    },
+    {
+      "matches": ["*://cocoapods.org/*", "*://*.cocoapods.org/*"],
+      "css": ["css/style.css"],
+      "js": ["js/jquery-1.10.2.min.js", "js/base.js", "js/cocoapods.js"]
     }
   ]
 }

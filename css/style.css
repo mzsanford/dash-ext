@@ -3,3 +3,9 @@
 .btn-add-to-dash {
 
 }
+
+.add-to-dash-floating {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
