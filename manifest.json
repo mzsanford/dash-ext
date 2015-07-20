@@ -2,6 +2,11 @@
   "name": "Add to Dash",
   "manifest_version": 2,
   "version": "0.1",
+  "icons": {
+   "128": "icon_128.png",
+   "64": "icon_64.png",
+   "16": "icon_16.png"
+  },
   "content_scripts": [
     {
       "matches": ["*://godoc.org/*", "*://*.godoc.org/*"],
