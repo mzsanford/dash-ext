@@ -1,12 +1,12 @@
 
-var $parent = $('<div class="add-to-dash-floating"></div>');
-var $button = makeButtonElement('rubygems');
-var currentTarget = $('.gem-name').html(); // TODO: Get whatever addToDash function needs.
+var $parent = $('.page__heading');
+var currentTarget = $('.page__heading a').html(); // TODO: Get whatever addToDash function needs.
 
 if (currentTarget !== undefined) {
-  $('body').append($parent);
+  var $button = makeButtonElement('rubygems', currentTarget);
   $parent.append($button);
-  $button.click(function() {
+  $button.click(function(e) {
+    e.preventDefault();
     addToDash(currentTarget);
   });
 }

@@ -1,11 +1,14 @@
 
-var $parent = $('.pkg'); // TODO: Where on the page the button goes
-var $button = makeButtonElement('godoc');
-var currentTarget = $parent.html(); // TODO: Get whatever addToDash function needs.
+var $parent = $('#pkg-overview');
+
+// TODO: Get whatever addToDash function needs.
+var currentTarget = $('.container code:first').html().replace(/import "(.*)"/, '$1');
 
 if (currentTarget !== undefined) {
+  var $button = makeButtonElement('godoc', currentTarget);
   $parent.append($button);
-  $button.click(function() {
+  $button.click(function(e) {
+    e.preventDefault();
     addToDash(currentTarget);
   });
 }

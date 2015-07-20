@@ -19,7 +19,7 @@
       "js": ["js/jquery-1.10.2.min.js", "js/base.js", "js/rubygems.js"]
     },
     {
-      "matches": ["*://cocoapods.org/*", "*://*.cocoapods.org/*"],
+      "matches": ["*://cocoapods.org/", "*://cocoapods.org/*", "*://*.cocoapods.org/*"],
       "css": ["css/style.css"],
       "js": ["js/jquery-1.10.2.min.js", "js/base.js", "js/cocoapods.js"]
     }
