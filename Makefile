@@ -2,7 +2,7 @@
 XAR=/usr/local/bin/xar
 BUILD_DIR=./certs
 
-VERSION="0.1"
+VERSION=0.1
 
 JSFILES_SHARED=$(wildcard shared/js/*.js )
 JSFILES=$(notdir $(JSFILES_SHARED))

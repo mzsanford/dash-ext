@@ -36,6 +36,7 @@
 		<dict>
 			<key>End</key>
 			<array>
+				<string>safari.js</string>
 				<string>jquery-1.10.2.min.js</string>
 				<string>base.js</string>
 				<string>cocoapods.js</string>
@@ -45,7 +46,7 @@
 		</dict>
 		<key>Stylesheets</key>
 		<array>
-			<string>dash.css</string>
+			<string>style.css</string>
 		</array>
 		<key>Whitelist</key>
 		<array>
