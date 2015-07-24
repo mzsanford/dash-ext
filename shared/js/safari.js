@@ -1,2 +1,2 @@
 
-console.log('Safari ext loaded');
+// Safari background functions

@@ -13,13 +13,38 @@
   cursor: pointer;
 }
 
-/* Example: per-site button styling. */
+/*
+ * GoDoc Styles
+ */
 .btn-add-to-dash.btn-godoc {
-  padding: 4px 4px 4px 24px;
-  font-family: monospace;
+  padding: 4px;
+  margin-left: 10px;
+  color: #fff !important;
+  background-color: #375EAB;
+  background-image: none;
+  border: none;
+  vertical-align: middle;
+  font-family: Arial, sans-serif;
 }
 
-/* Example: eXtra elements */
+.btn-add-to-dash.btn-godoc:hover {
+  text-decoration: none !important;
+}
+
+/*
+ * Rubygems Styles
+ */
+.btn-add-to-dash.btn-rubygems {
+}
+
+/*
+ * Cocoapods Styles
+ */
+ .btn-add-to-dash.btn-cocoapods {
+ }
+
+
+/* Example: Extra elements */
 .add-to-dash-floating {
   position: absolute;
   top: 8px;

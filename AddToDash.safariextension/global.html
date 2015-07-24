@@ -4,14 +4,19 @@
 <title>global HTML page</title>
 <script type="text/javascript">
 console.log('global loaded');
-safari.application.addEventListener("contextmenu", handleContextMenu, false);
-safari.application.addEventListener("validate", handleValidation, false);
+safari.application.addEventListener("command", handleCommandEvent, false);
+safari.application.addEventListener("contextmenu", handleContextEvent, false);
+safari.application.addEventListener("validate", handleValidationEvent, false);
 
-function handleContextMenu(event) {
+function handleCommandEvent(event) {
+  console.log('Command fire');
+}
+
+function handleContextEvent(event) {
   console.log('Context fire');
 }
 
-function handleValidation(event) {
+function handleValidationEvent(event) {
   console.log('Validate fires.');
 }
 </script>

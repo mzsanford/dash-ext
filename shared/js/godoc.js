@@ -1,5 +1,4 @@
 
-console.log('loaded');
 if (window.location.hostname.match(/godoc/)) {
   var $parent = $('.container h1:first');
   if ($parent.size() <= 0) {
