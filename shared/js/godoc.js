@@ -2,7 +2,6 @@
 console.log('loaded');
 if (window.location.hostname.match(/godoc/)) {
   var $parent = $('.container h1:first');
-  console.log($parent);
   if ($parent.size() <= 0) {
     $parent = $('#pkg-overview');
   }

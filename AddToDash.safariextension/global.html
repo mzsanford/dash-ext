@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>global HTML page</title>
+<script type="text/javascript">
+console.log('global loaded');
+safari.application.addEventListener("contextmenu", handleContextMenu, false);
+safari.application.addEventListener("validate", handleValidation, false);
+
+function handleContextMenu(event) {
+  console.log('Context fire');
+}
+
+function handleValidation(event) {
+  console.log('Validate fires.');
+}
+</script>
+</head>
+<body>
+</body>
+</html>

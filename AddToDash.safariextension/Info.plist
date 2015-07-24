@@ -15,7 +15,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>0.1</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
 	<key>Chrome</key>
 	<dict>
 		<key>Context Menu Items</key>
@@ -48,10 +48,6 @@
 		<array>
 			<string>style.css</string>
 		</array>
-		<key>Whitelist</key>
-		<array>
-			<string>http://godoc.org/*</string>
-		</array>
 	</dict>
 	<key>Description</key>
 	<string>Add document sets to Dash.app</string>
@@ -75,7 +71,7 @@
 			<key>Include Secure Pages</key>
 			<true/>
 			<key>Level</key>
-			<string>Some</string>
+			<string>All</string>
 		</dict>
 	</dict>
 </dict>
