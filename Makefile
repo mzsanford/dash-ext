@@ -4,24 +4,25 @@ BUILD_DIR=./certs
 
 VERSION="0.1"
 
-SAFARI_NAME="AddToDash"
+JSFILES_SHARED=$(wildcard shared/js/*.js )
+JSFILES=$(notdir $(JSFILES_SHARED))
+
+CSSFILES_SHARED=$(wildcard shared/css/*.css )
+CSSFILES=$(notdir $(CSSFILES_SHARED))
+
+SAFARI_NAME=AddToDash
 SAFARI_VERSION=$(VERSION)
 SAFARI_SRC_DIR=$(SAFARI_NAME).safariextension
+SAFARI_JSFILES=$(addprefix $(SAFARI_SRC_DIR)/, $(JSFILES) )
+SAFARI_CSSFILES=$(addprefix $(SAFARI_SRC_DIR)/, $(CSSFILES) )
 
 CHROME_VERSION=$(VERSION)
+CHROME_JSFILES=$(addprefix chrome/js/, $(JSFILES) )
+CHROME_CSSFILES=$(addprefix chrome/css/, $(CSSFILES) )
 
-JS = $(wildcard shared/js/*.js)
-JSFILES = $(notdir $(JS))
-DIRS = $(dir $(JS))
+pkg: pkg_safari pkg_chrome
 
-TARGETS = $(addprefix $(SAFARI_SRC_DIR)/, $(JSFILES))
-
-$(SAFARI_SRC_DIR)/%.js: %.js
-  cp $< $@
-
-vpath %.js $(DIRS)
-
-pkg_safari:
+pkg_safari: $(SAFARI_JSFILES) $(SAFARI_CSSFILES)
 	$(XAR) -czf $(SAFARI_NAME).safariextz --distribution $(SAFARI_NAME).safariextension
 	$(XAR) --sign -f $(SAFARI_NAME).safariextz --digestinfo-to-sign digest.dat \
 	   --sig-size `cat $(BUILD_DIR)/size.txt` --cert-loc $(BUILD_DIR)/cert.der \
@@ -31,20 +32,30 @@ pkg_safari:
 	rm -f sig.dat digest.dat
 	mv $(SAFARI_NAME).safariextz $(SAFARI_NAME)-v$(SAFARI_VERSION).safariextz
 
-pkg_chrome: chrome/js chrome/css
+$(SAFARI_SRC_DIR)/%.js: shared/js/%.js
+	cp $< $@
+
+$(SAFARI_SRC_DIR)/%.css: shared/css/%.css
+	cp $< $@
+
+pkg_chrome: chrome/js chrome/css $(CHROME_JSFILES) $(CHROME_CSSFILES)
 		cd chrome && \
 		zip add-to-dash-v$(CHROME_VERSION).zip * && \
 		mv add-to-dash-v$(CHROME_VERSION).zip ../add-to-dash-v$(CHROME_VERSION).crx
 
-chrome/js: shared/js
-	[[ ! -e chrome/js ]] || (echo "ERROR: chrome/js exsts. make clean and used the shared copy" && exit 1)
-	cp -R shared/js chrome/js
+chrome/js:
+	mkdir chrome/js
 
-chrome/css: shared/css
-	[[ ! -e chrome/css ]] || (echo "ERROR: chrome/css exsts. make clean and used the shared copy" && exit 1)
-	cp -R shared/css chrome/css
+chrome/css:
+	mkdir chrome/css
 
+chrome/js/%.js: shared/js/%.js
+	cp $< $@
 
+chrome/css/%.css: shared/css/%.css
+	cp $< $@
 
 clean:
-		rm -rf *.safariextz chrome/js chrome/css
+		rm -f *.safariextz *.crx
+		rm -f $(SAFARI_JSFILES) $(CHROME_JSFILES)
+		rm -f $(SAFARI_CSSFILES) $(CHROME_CSSFILES)

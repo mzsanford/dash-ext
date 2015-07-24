@@ -36,7 +36,6 @@
 		<dict>
 			<key>End</key>
 			<array>
-				<string>injected.js</string>
 				<string>jquery-1.10.2.min.js</string>
 				<string>base.js</string>
 				<string>cocoapods.js</string>
