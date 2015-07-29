@@ -1,7 +1,7 @@
 
 if (window.location.hostname.match(/rubygems/)) {
   var $parent = $('.page__heading');
-  var currentTarget = $('.page__heading a').html(); // TODO: Get whatever addToDash function needs.
+  var currentTarget = $('.page__heading a').html();
 
   if (currentTarget !== undefined) {
     var $button = makeButtonElement('rubygems', currentTarget);

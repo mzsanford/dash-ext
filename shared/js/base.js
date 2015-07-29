@@ -1,7 +1,8 @@
 
 function addToDash(repo, entry) {
-  // TODO: Handle specific package versions
   dashURL = "dash-install://repo_name=" + encodeURIComponent(repo) + "&entry_name=" + encodeURIComponent(entry);
+  // The dash-install:// scheme can also take a &version= parameter for versioned
+  // docsets.
   document.location = dashURL;
 }
 

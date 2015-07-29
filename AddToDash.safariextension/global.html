@@ -3,12 +3,11 @@
 <head>
 <title>global HTML page</title>
 <script type="text/javascript">
-console.log('global loaded');
 safari.application.addEventListener("command", handleCommandEvent, false);
 safari.application.addEventListener("validate", handleValidationEvent, false);
 
 function handleCommandEvent(event) {
-  // TODO: Add to dash here (find the button and click?)
+  safari.application.activeBrowserWindow.activeTab.page.dispatchMessage('addToDash', 'dummy');
 }
 
 function handleValidationEvent(event) {
@@ -20,8 +19,7 @@ function handleValidationEvent(event) {
       (pageUrl.match(/godoc/) ||
        pageUrl.match(/rubygems/) ||
        pageUrl.match(/cocoapods/))) {
-        // We process this page, allow the menu.
-        // TODO: Look for the button first?
+        // We process this page, allow the menu
   } else {
     // Ignore this page
     event.target.disabled = true;
