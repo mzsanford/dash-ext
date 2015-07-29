@@ -8,7 +8,7 @@ safari.application.addEventListener("command", handleCommandEvent, false);
 safari.application.addEventListener("validate", handleValidationEvent, false);
 
 function handleCommandEvent(event) {
-  // Add to dash here (find the button and click?)
+  // TODO: Add to dash here (find the button and click?)
 }
 
 function handleValidationEvent(event) {
@@ -20,7 +20,8 @@ function handleValidationEvent(event) {
       (pageUrl.match(/godoc/) ||
        pageUrl.match(/rubygems/) ||
        pageUrl.match(/cocoapods/))) {
-        // We process this page.
+        // We process this page, allow the menu.
+        // TODO: Look for the button first?
   } else {
     // Ignore this page
     event.target.disabled = true;
