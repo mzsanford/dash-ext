@@ -8,7 +8,7 @@ if (window.location.hostname.match(/rubygems/)) {
     $parent.append($button);
     $button.click(function(e) {
       e.preventDefault();
-      addToDash(currentTarget);
+      addToDash('Ruby Docsets', currentTarget);
     });
   }
 }

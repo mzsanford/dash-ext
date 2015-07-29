@@ -10,7 +10,7 @@ if (window.location.hostname.match(/cocoapods/)) {
         var $button = makeButtonElement('cocoapods', $podName);
         $button.click(function(e) {
           e.preventDefault();
-          addToDash($podName);
+          addToDash('Cocoa Docsets', $podName);
         });
         $header.append($button);
 
@@ -28,7 +28,7 @@ if (window.location.hostname.match(/cocoapods/)) {
     var $button = makeButtonElement('cocoapods', $podName);
     $button.click(function(e) {
       e.preventDefault();
-      addToDash($podName);
+      addToDash('Cocoa Docsets', $podName);
     });
     var $githubLink = $('.github-link');
     $button.insertAfter($githubLink);

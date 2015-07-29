@@ -5,19 +5,27 @@
 <script type="text/javascript">
 console.log('global loaded');
 safari.application.addEventListener("command", handleCommandEvent, false);
-safari.application.addEventListener("contextmenu", handleContextEvent, false);
 safari.application.addEventListener("validate", handleValidationEvent, false);
 
 function handleCommandEvent(event) {
-  console.log('Command fire');
-}
-
-function handleContextEvent(event) {
-  console.log('Context fire');
+  // Add to dash here (find the button and click?)
 }
 
 function handleValidationEvent(event) {
-  console.log('Validate fires.');
+  // Get the page URL. This is undefined if we're not on a site listed in
+  // the Info.plist
+  pageUrl = safari.application.activeBrowserWindow.activeTab.url;
+
+  if (pageUrl !== undefined &&
+      (pageUrl.match(/godoc/) ||
+       pageUrl.match(/rubygems/) ||
+       pageUrl.match(/cocoapods/))) {
+        // We process this page.
+  } else {
+    // Ignore this page
+    event.target.disabled = true;
+    event.preventDefault();
+  }
 }
 </script>
 </head>

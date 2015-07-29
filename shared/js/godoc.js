@@ -5,7 +5,6 @@ if (window.location.hostname.match(/godoc/)) {
     $parent = $('#pkg-overview');
   }
 
-  // TODO: Get whatever addToDash function needs.
   var currentTarget = $('.container code:first').html().replace(/import "(.*)"/, '$1');
 
   if (currentTarget !== undefined) {
@@ -13,7 +12,7 @@ if (window.location.hostname.match(/godoc/)) {
     $parent.append($button);
     $button.click(function(e) {
       e.preventDefault();
-      addToDash(currentTarget);
+      addToDash('Go Docsets', currentTarget);
     });
   }
 }

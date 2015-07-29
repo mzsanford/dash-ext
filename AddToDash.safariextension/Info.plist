@@ -22,13 +22,15 @@
 		<array>
 			<dict>
 				<key>Command</key>
-				<string></string>
+				<string>dash-context-menu</string>
 				<key>Identifier</key>
-				<string>add-to-dash-menu</string>
+				<string>dash-context</string>
 				<key>Title</key>
 				<string>Add to Dash</string>
 			</dict>
 		</array>
+		<key>Global Page</key>
+		<string>global.html</string>
 	</dict>
 	<key>Content</key>
 	<dict>
@@ -71,7 +73,7 @@
 			<key>Include Secure Pages</key>
 			<true/>
 			<key>Level</key>
-			<string>All</string>
+			<string>Some</string>
 		</dict>
 	</dict>
 </dict>

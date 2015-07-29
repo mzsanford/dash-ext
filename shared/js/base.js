@@ -1,7 +1,8 @@
 
-function addToDash(url_or_package) {
-  // TODO: Call whatever Dash gives me here.
-  alert('Added to Dash: ' + url_or_package);
+function addToDash(repo, entry) {
+  // TODO: Handle specific package versions
+  dashURL = "dash-install://repo_name=" + encodeURIComponent(repo) + "&entry_name=" + encodeURIComponent(entry);
+  document.location = dashURL;
 }
 
 function makeButtonElement(type, pkg) {
