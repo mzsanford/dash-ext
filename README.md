@@ -1,6 +1,6 @@
 # dash-ext
 
-Browser extensions for adding docksets to Dash - https://kapeli.com/dash
+Browser extensions for adding docsets to Dash - https://kapeli.com/dash
 
 This is not developed by Kapeli.
 
