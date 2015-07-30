@@ -4,6 +4,14 @@ Browser extensions for adding docsets to Dash - https://kapeli.com/dash
 
 This is not developed by Kapeli.
 
+# Examples
+
+The extension alters popular documentation sites, inserting an "Add to Dash" element on the page:
+
+![godoc.org](https://raw.github.com/mzsanford/dash-ext/master/test/godoc.png)
+![rubygems.org](https://raw.github.com/mzsanford/dash-ext/master/test/rubygems.png)
+![cocoapods.org](https://raw.github.com/mzsanford/dash-ext/master/test/cocoapods.png)
+
 # Status
 
 Currently in alpha status with major known bugs. The current codebase is targeting
