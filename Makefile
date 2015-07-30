@@ -56,6 +56,6 @@ chrome/css/%.css: shared/css/%.css
 	cp $< $@
 
 clean:
-		rm -f *.safariextz *.crx
+		rm -f *.safariextz *.crx *.zip
 		rm -f $(SAFARI_JSFILES) $(CHROME_JSFILES)
 		rm -f $(SAFARI_CSSFILES) $(CHROME_CSSFILES)

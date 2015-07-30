@@ -2,7 +2,7 @@
 if (window.location.hostname.match(/cocoapods/)) {
   // Result list pages.
   var refreshResultButtons = function() {
-    $('.result').each(function() {
+    $('.result.is-expanded').each(function() {
       var $result = $(this);
       var $podName = $result.attr('data-pod-name');
       var $header = $result.find('h3');

@@ -1,11 +1,7 @@
 
 /* Style the button here */
 .btn-add-to-dash {
-  background-position: 2px center;
-  background-repeat: no-repeat;
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAWlJREFUOBFjXJH0ypORgWHufwYGSQYSAFDPc6CeZJY///7PZWAkTTPUHkmG/wxzWX4z/AcxyAWSLL/+Q3QbB/AwgDA28PbxH4az678wPDj3A0Oa2V2/qOEv0AlPbvxkAHqFQVqDHUMRFz8Tg7I5BwMLJyPD/cs/GEDqYZixO/YJXg9w8zMzaFpyMliH8DGwsjEybJ76juHmye9wS5h+/vvHgA+/e/+b4ei2Twy7Fr0HazJw4UZRz/T9/z8GZFy9RJYBhJHFQOyzx76ADZBQZEORY/kBDUS4m6AMdPF/UI/+/fOfAVmO5QfQC9gAuri+GS9Y2ZOHvxiQ5YAuwGEAVJyLm4nBzJqXISxGBGzA7u0fgC5A6MHpgjkrVTActnXTe4ajxz+hiLP8xBEGyKoePPjJsHTpa4YL578iC4PZjL5B1/CmAwwdaAKgpPwcKEZSTkQy4wXTr3+MKb///X/xG+gVkjADw1Og3mQAMDjxQTvKq8UAAAAASUVORK5CYII=");
-  background-color: #eee;
-  padding: 2px 2px 2px 20px;
+  padding: 2px;
   font-size: 12px;
   font-weight: normal;
   border-radius: 3px;
@@ -55,7 +51,24 @@ a.btn-add-to-dash.btn-rubygems {
  * Cocoapods Styles
  */
  .btn-add-to-dash.btn-cocoapods {
+   background-image: url("data:image/png;base64,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");
+   background-position: 2px center;
+   background-repeat: no-repeat;
+   padding-left: 30px;
+   font-size: 1em;
+   line-height: 1.4em;
  }
+
+.compressed .btn-add-to-dash.btn-cocoapods {
+  margin-left: 0.5em;
+  text-indent: -9999px;
+  display: inline-block;
+  height: 19px;
+  margin-top: 0.1em;
+  vertical-align: top;
+  font-family: "GT Walsheim", "gt_walsheim_regular", "Avant Garde Gothic ITCW01Dm", "Avant Garde", "Helvetica Neue", "Arial";
+  font-size: 24px;
+}
 
 
 /* Example: Extra elements */
