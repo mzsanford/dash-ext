@@ -14,8 +14,8 @@
 .btn-add-to-dash.btn-godoc {
   padding: 4px;
   margin-left: 10px;
-  color: #fff !important;
-  background-color: #375EAB !important;
+  color: #fff;
+  background-color: #375EAB;
   background-image: none;
   border: none;
   vertical-align: middle;
@@ -24,6 +24,11 @@
 
 .btn-add-to-dash.btn-godoc:hover {
   text-decoration: none !important;
+}
+
+.btn-add-to-dash.btn-godoc.btn-sent {
+  background-color: #eee !important;
+  color: #777 !important;
 }
 
 /*
@@ -47,6 +52,12 @@ a.btn-add-to-dash.btn-rubygems {
   color: #fff;
 }
 
+.btn-add-to-dash.btn-rubygems.btn-sent {
+  background-color: #eee !important;
+  color: #777 !important;
+}
+
+
 /*
  * Cocoapods Styles
  */
@@ -57,6 +68,7 @@ a.btn-add-to-dash.btn-rubygems {
    padding-left: 30px;
    font-size: 1em;
    line-height: 1.4em;
+   -webkit-transition: background-position 500ms, padding 500ms, font-size 500ms;
  }
 
 .compressed .btn-add-to-dash.btn-cocoapods {
@@ -70,10 +82,10 @@ a.btn-add-to-dash.btn-rubygems {
   font-size: 24px;
 }
 
-
-/* Example: Extra elements */
-.add-to-dash-floating {
-  position: absolute;
-  top: 8px;
-  right: 8px;
+.btn-add-to-dash.btn-cocoapods.btn-sent {
+  background-color: none !important;
+  color: #777 !important;
+  font-size: 0.8em;
+  padding-left: 2px;
+  background-position: -40px center;
 }

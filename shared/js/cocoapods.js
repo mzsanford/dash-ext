@@ -2,40 +2,48 @@
 if (window.location.hostname.match(/cocoapods/)) {
   // Result list pages.
   var refreshResultButtons = function() {
-    $('.result.is-expanded').each(function() {
-      var $result = $(this);
-      var $podName = $result.attr('data-pod-name');
-      var $header = $result.find('h3');
-      if ($header.length > 0 && $result.find('.btn-add-to-dash').length == 0) {
-        var $button = makeButtonElement('cocoapods', $podName);
-        $button.click(function(e) {
-          e.preventDefault();
-          addToDash('Cocoa Docsets', $podName);
+    var expandedResults = getAllElementsWithSelector(document, '.result.is-expanded');
+    for (var i = 0; i < expandedResults.length; i++) {
+      var result = expandedResults[i];
+      var podName = result.dataset.podName;
+      var headers = result.getElementsByTagName('h3');
+      var button = getFirstElementWithSelector(result, '.btn-add-to-dash');
+      if (button == null &&
+          podName != null &&
+          headers != null && headers.length >= 1) {
+        var header = headers[0];
+        var button = makeButtonElement('cocoapods', podName);
+        button.addEventListener('click', function(e) {
+          addToDash('Cocoa Docsets', podName, e);
         });
-        $header.append($button);
+        header.appendChild(button);
 
-        $result.bind('DOMNodeInserted', function(event) {
-          var $githubLink = $result.find('.github-link');
-          $button.insertAfter($githubLink);
+        result.addEventListener('DOMNodeInserted', function(e) {
+          var githubLink = getFirstElementWithSelector(result, '.github-link');
+          insertAfter(githubLink, button);
         });
       }
-    });
+    }
   };
 
   // Full detail page
   if (window.location.pathname.startsWith('/pods/')) {
-    var $podName = window.location.pathname.substr(6); // Substract "/pods/"
-    var $button = makeButtonElement('cocoapods', $podName);
-    $button.click(function(e) {
-      e.preventDefault();
-      addToDash('Cocoa Docsets', $podName);
+    var podName = window.location.pathname.substr(6); // Substract "/pods/"
+    var button = makeButtonElement('cocoapods', podName);
+    button.addEventListener('click', function(e) {
+      addToDash('Cocoa Docsets', podName, e);
     });
-    var $githubLink = $('.github-link');
-    $button.insertAfter($githubLink);
+    var githubLink = getFirstElementWithSelector(document, '.github-link');
+    if (githubLink != null) {
+      insertAfter(githubLink, button);
+    }
   } else {
-    $('div.results').bind('DOMNodeRemoved', function(event) {
-      refreshResultButtons();
-    });
+    var results = getFirstElementWithSelector(document, 'div.results');
+    if (results != null) {
+      results.addEventListener('DOMNodeRemoved', function(e) {
+        refreshResultButtons();
+      });
+    }
     refreshResultButtons();
   }
 }
