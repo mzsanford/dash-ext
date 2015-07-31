@@ -1,18 +1,25 @@
 
 if (window.location.hostname.match(/godoc/)) {
-  var $parent = $('.container h1:first');
-  if ($parent.size() <= 0) {
-    $parent = $('#pkg-overview');
+  var parent = getFirstElementWithSelector(document, '.container h1');
+  if (parent == null) {
+    parent = document.getElementById('pkg-overview');
   }
 
-  var currentTarget = $('.container code:first').html().replace(/import "(.*)"/, '$1');
+  if (parent != null) {
+    var currentTarget = getFirstElementWithSelector(document, '.container code');
+    if (currentTarget != null) {
+      currentTarget = currentTarget.innerHTML.replace(/import "(.*)"/, '$1');
 
-  if (currentTarget !== undefined) {
-    var $button = makeButtonElement('godoc', currentTarget);
-    $parent.append($button);
-    $button.click(function(e) {
-      e.preventDefault();
-      addToDash('Go Docsets', currentTarget);
-    });
+      var button = makeButtonElement('godoc', currentTarget);
+      parent.appendChild(button);
+      button.addEventListener('click', function(e) {
+        addToDash('Go Docsets', currentTarget, e);
+      });
+    } else {
+      // Could not find the import example
+    }
+  } else {
+    // Could not find the package title
   }
+
 }

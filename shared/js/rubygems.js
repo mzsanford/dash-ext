@@ -1,14 +1,14 @@
 
 if (window.location.hostname.match(/rubygems/)) {
-  var $parent = $('.page__heading');
-  var currentTarget = $('.page__heading a').html();
+  var parent = getFirstElementWithSelector(document, '.page__heading');
+  var currentTarget = getFirstElementWithSelector(document, '.page__heading a');
 
-  if (currentTarget !== undefined) {
-    var $button = makeButtonElement('rubygems', currentTarget);
-    $parent.append($button);
-    $button.click(function(e) {
-      e.preventDefault();
-      addToDash('Ruby Docsets', currentTarget);
+  if (currentTarget != null) {
+    currentTarget = currentTarget.innerHTML;
+    var button = makeButtonElement('rubygems', currentTarget);
+    parent.appendChild(button);
+    button.addEventListener('click', function(e) {
+      addToDash('Ruby Docsets', currentTarget, e);
     });
   }
 }
