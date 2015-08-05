@@ -5,7 +5,7 @@
 	<key>Author</key>
 	<string>Matt Sanford</string>
 	<key>Builder Version</key>
-	<string>10601.1.39.0.2</string>
+	<string>10601.1.43</string>
 	<key>CFBundleDisplayName</key>
 	<string>Add to Dash</string>
 	<key>CFBundleIdentifier</key>
@@ -13,9 +13,9 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.1</string>
+	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>2</string>
+	<string>3</string>
 	<key>Chrome</key>
 	<dict>
 		<key>Context Menu Items</key>
@@ -75,5 +75,7 @@
 			<string>Some</string>
 		</dict>
 	</dict>
+	<key>Update Manifest URL</key>
+	<string>http://dash.mzsanford.com/Update.plist</string>
 </dict>
 </plist>
