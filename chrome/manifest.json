@@ -1,7 +1,7 @@
 {
   "name": "Add to Dash",
   "manifest_version": 2,
-  "version": "0.1",
+  "version": "1.0",
   "icons": {
    "128": "icon_128.png",
    "64": "icon_64.png",
