@@ -2,8 +2,6 @@
 XAR=/usr/local/bin/xar
 BUILD_DIR=./certs
 
-VERSION=0.1
-
 JSFILES_SHARED=$(wildcard shared/js/*.js )
 JSFILES=$(notdir $(JSFILES_SHARED))
 
@@ -16,7 +14,7 @@ SAFARI_SRC_DIR=$(SAFARI_NAME).safariextension
 SAFARI_JSFILES=$(addprefix $(SAFARI_SRC_DIR)/, $(JSFILES) )
 SAFARI_CSSFILES=$(addprefix $(SAFARI_SRC_DIR)/, $(CSSFILES) )
 
-CHROME_VERSION=$(VERSION)
+CHROME_VERSION=1.0
 CHROME_JSFILES=$(addprefix chrome/js/, $(JSFILES) )
 CHROME_CSSFILES=$(addprefix chrome/css/, $(CSSFILES) )
 
@@ -40,7 +38,7 @@ $(SAFARI_SRC_DIR)/%.css: shared/css/%.css
 
 pkg_chrome: chrome/js chrome/css $(CHROME_JSFILES) $(CHROME_CSSFILES)
 		cd chrome && \
-		zip add-to-dash-v$(CHROME_VERSION).zip * && \
+		zip add-to-dash-v$(CHROME_VERSION).zip * css/* js/* && \
 		mv add-to-dash-v$(CHROME_VERSION).zip ../add-to-dash-v$(CHROME_VERSION).crx
 
 chrome/js:
